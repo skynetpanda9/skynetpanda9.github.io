@@ -242,22 +242,32 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form action="" class="contact__form">
+          <form
+            action="https://formspree.io/f/mpzkzdve"
+            method="POST"
+            class="contact__form"
+            id="my-form"
+          >
             <input type="text" placeholder="Name" class="contact__input" />
-            <input type="mail" placeholder="Email" class="contact__input" />
+            <input type="email" placeholder="Email" class="contact__input" />
             <textarea
-              name=""
-              id=""
+              name="message"
+              id="message"
               cols="0"
               rows="10"
               class="contact__input"
             ></textarea>
-            <input
-              type="button"
+            <button
+              type="submit"
+              id="my-form-button"
               value="Let's catch up"
               class="contact__button button"
-            />
+            >
+              Let's catch up
+            </button>
           </form>
+          <p id="my-form-status"></p>
+          <div id="status"></div>
         </div>
       </section>
     </main>

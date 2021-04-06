@@ -361,6 +361,28 @@ img {
     cursor: pointer;
     margin-left: auto;
     margin-top: -1em;
+    transition: 0.3s ease background-color;
+  }
+  button[type="submit"]:hover {
+    background-color: rgb(110, 12, 12);
+  }
+  #status {
+    width: 40%;
+    max-width: 300px;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+  #status.success {
+    background-color: green;
+    color: #fafafa;
+    animation: status 2s ease forwards;
+  }
+  #status.error {
+    background-color: red;
+    color: #fafafa;
+    animation: status 2s ease forwards;
   }
 }
 
@@ -567,6 +589,7 @@ img {
       font-size: var(--normal-font-size);
       cursor: pointer;
       margin: auto;
+      transition: 0.3s ease background-color;
     }
   }
 
@@ -698,7 +721,7 @@ img {
     height: 220vh;
   }
   .contact {
-    height: 100vh;
+    height: 120vh;
     margin: 1.4em;
     &__form {
       width: 560px;
@@ -716,6 +739,15 @@ img {
       outline: none;
       font-size: var(--normal-font-size);
       cursor: pointer;
+      margin-left: 0em;
+    }
+    #status {
+      width: 800%;
+      max-width: 400px;
+      text-align: center;
+      padding: 10px;
+      margin: 0 auto;
+      border-radius: 8px;
       margin-left: 0em;
     }
   }
