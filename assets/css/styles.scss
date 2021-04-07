@@ -40,7 +40,7 @@ body {
   margin: var(--header-height) 0 0 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  color: var(--second-color);
+  color: var(--third-color);
 }
 
 h1,
@@ -61,7 +61,7 @@ a {
 }
 
 img {
-  max-width: 95%;
+  max-width: 98%;
   height: auto;
   margin: 0 10px;
   display: block;
@@ -71,7 +71,7 @@ img {
 .section-title {
   position: relative;
   font-size: var(--h2-font-size);
-  color: var(--first-color);
+  color: var(--final-color);
   margin-left: 0;
   margin-top: var(--mb-3);
   margin-bottom: var(--mb-6);
@@ -90,16 +90,16 @@ img {
   }
 }
 .section {
-  height: 90vh;
+  height: auto;
   padding-top: 3rem;
   padding-bottom: 1rem;
 }
 
 .bd-grid {
-  max-width: 1440px;
+  max-width: 2560px;
   display: grid;
   grid-template-columns: 100%;
-  grid-column-gap: 2rem;
+  grid-column-gap: 1rem;
   width: calc(100% - 2rem);
   margin-left: var(--mb-1);
   margin-right: var(--mb-1);
@@ -110,7 +110,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: rgb(26, 26, 26);
+  background-color: rgba(26, 26, 26, 0.952);
   box-shadow: 0 1px 4px rgba(135, 149, 163, 0.342);
 }
 .nav {
@@ -119,7 +119,6 @@ img {
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
-
   &__menu {
     @media screen and (max-width: 768px) {
       position: fixed;
@@ -128,19 +127,21 @@ img {
       width: 60%;
       height: 100%;
       padding: 2rem;
-      background-color: var(--second-color);
+      background-color: rgb(26, 26, 26);
       transition: 0.5s;
     }
   }
-
+  &__list {
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 3em;
+  }
   &__item {
     margin-bottom: var(--mb-4);
   }
-
   &__link {
     position: relative;
-    color: #fff;
-
+    color: #fafafa;
     &:hover {
       position: relative;
 
@@ -156,6 +157,7 @@ img {
     }
   }
   &__logo {
+    margin: 0 1em;
     color: var(--final-color);
   }
   &__toggle {
@@ -180,33 +182,30 @@ img {
 }
 
 .home {
-  height: 90vh;
-  //   row-gap: 1rem;
   &__data {
     align-self: center;
   }
   &__title {
-    margin-top: 2em;
+    margin: 4em 0.4em;
     font-size: var(--big-font-size);
     margin-bottom: var(--mb-1);
-
     &-color {
       color: var(--first-color);
     }
   }
   &__social {
-    margin-top: 18em;
-    margin-left: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin: 14em auto 2em auto;
+    padding-bottom: 1rem;
     display: flex;
     column-gap: 62px;
     z-index: 10;
-
     &-icon {
       width: max-content;
       margin-bottom: var(--mb-2);
       font-size: 1.7rem;
-      color: var(--second-color);
-
       &:hover {
         color: var(--first-color);
       }
@@ -214,21 +213,19 @@ img {
   }
 
   &__img {
-    // display: none;
-    position: absolute;
-    top: 30em;
+    z-index: -10;
+    position: fixed;
+    top: 0;
+    left: -1em;
     right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
+    width: 1500px;
   }
 }
 .button {
   display: inline-block;
-  margin-top: 2em;
-  margin-left: 0.2em;
+  margin: 2em 0.5em;
   background-color: var(--first-color);
-  color: #fff;
+  color: #fafafa;
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
@@ -240,17 +237,18 @@ img {
 
 // About
 .about {
+  margin: 0 0 0 0.1em;
   &__container {
     row-gap: 0rem;
-    text-align: center;
-    // text-align: start;
+    text-align: justify;
   }
   &__subtitle {
-    margin-left: 0.8em;
+    text-align: center;
     margin-bottom: var(--mb-2);
   }
 
   &__text {
+    margin-right: -0.6em;
     a {
       color: #f50000;
     }
@@ -269,10 +267,12 @@ img {
 // Skills
 
 .skills {
-  height: 170vh;
   &__container {
+    margin: auto;
     row-gap: 2rem;
     text-align: center;
+    z-index: 10;
+    align-items: center;
   }
   &__subtitle {
     margin-bottom: var(--mb-2);
@@ -289,12 +289,12 @@ img {
     padding: 0.5rem 1rem;
     margin-bottom: var(--mb-4);
     border-radius: 0.5rem;
-    box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
+    box-shadow: 0px 4px 25px rgba(121, 135, 143, 0.15);
   }
   &__icon {
     font-size: 2rem;
     margin-right: var(--mb-2);
-    color: var(--first-color);
+    color: var(--final-color);
   }
   &__names {
     display: flex;
@@ -311,6 +311,7 @@ img {
   }
 
   &__img {
+    display: none;
     border-radius: 0.5rem;
     width: 100%;
     z-index: 10;
@@ -320,7 +321,6 @@ img {
 // Work
 
 .work {
-  height: 170vh;
   &__container {
     row-gap: 2rem;
   }
@@ -334,7 +334,7 @@ img {
       cursor: pointer;
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.5);
       }
     }
   }
@@ -342,10 +342,14 @@ img {
 
 // Contact
 .contact {
-  height: 90vh;
+  &__container {
+    justify-content: center;
+    margin: auto;
+  }
   &__input {
     width: 100%;
     font-size: var(--normal-font-size);
+    background-color: #ffffffb4;
     font-weight: var(--font-semi);
     padding: 1rem;
     border-radius: 0.5rem;
@@ -359,15 +363,14 @@ img {
     outline: none;
     font-size: var(--normal-font-size);
     cursor: pointer;
-    margin-left: auto;
-    margin-top: -1em;
-    transition: 0.3s ease background-color;
+    margin: auto;
+    transition: 0.3s ease;
   }
   button[type="submit"]:hover {
     background-color: rgb(110, 12, 12);
   }
   #status {
-    width: 40%;
+    width: 100%;
     max-width: 300px;
     text-align: center;
     padding: 10px;
@@ -375,12 +378,12 @@ img {
     border-radius: 8px;
   }
   #status.success {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.582);
     color: #fafafa;
     animation: status 2s ease forwards;
   }
   #status.error {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.582);
     color: #fafafa;
     animation: status 2s ease forwards;
   }
@@ -389,8 +392,7 @@ img {
 // Footer
 .footer {
   background-color: rgb(26, 26, 26);
-  // box-shadow: 0 1px 4px rgba(135, 149, 163, 0.342);
-  color: #fff;
+  color: #fafafa;
   text-align: center;
   font-weight: var(--normal-font-size);
   padding: 2rem 0;
@@ -404,43 +406,21 @@ img {
   }
   &__icon {
     font-size: 1.5rem;
-    color: #fff;
+    color: #fafafa;
     margin: 0 var(--mb-2);
   }
 }
 
 // Media screens
 @media screen and(min-width: 768px) {
-  .section-title {
-    color: #ffff00;
-    &::after {
-      width: 100px;
-    }
-  }
-  .section {
-    font-size: 22px;
-    padding-top: 5rem;
-    padding-bottom: 2rem;
-  }
-  body {
-    margin: 0;
-  }
-
   .nav {
-    height: 4rem;
-
     &__logo {
       margin-left: 1rem;
-      font-size: var(--h2-font-size);
+      font-size: var(--mb-2);
     }
 
-    &__list {
-      font-size: 1.3em;
-      text-align: center;
-      line-height: 2em;
-    }
     &__item {
-      margin-left: var(--mb-6);
+      margin-left: var(--mb-2);
       margin-bottom: 1em;
     }
     &__toggle {
@@ -464,9 +444,7 @@ img {
   }
 
   .section-title {
-    font-size: 34px;
-    margin-bottom: var(--mb-6);
-
+    font-size: var(--mb-4);
     &::after {
       width: 80px;
       top: 3rem;
@@ -478,49 +456,34 @@ img {
     &__data {
       align-self: flex-end;
     }
-
     &__title {
-      margin-top: 0em;
-      margin-left: 0.5em;
+      margin: 0 0.4em;
       font-size: 42px;
       z-index: 10;
       color: #fafafa;
     }
     &__social {
-      padding-top: 0;
-      margin-top: 1rem;
-      margin-left: 7.5rem;
-      padding-bottom: 2rem;
-      align-self: flex-end;
-
+      column-gap: 95px;
       &-icon {
-        color: var(--third-color);
-        margin-bottom: 0;
-        margin-right: var(--mb-4);
         font-size: 3rem;
       }
     }
     &__img {
-      position: fixed;
-      z-index: -10;
-      top: -5em;
-      left: -1em;
-      width: 2000px;
+      width: 300%;
     }
     .button {
-      margin-left: 1.3em;
+      margin: 4em 0.7em;
     }
   }
   .about {
-    margin: 1em;
-    height: 130vh;
     &__container {
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
       text-align: initial;
     }
     &__subtitle {
-      margin-left: 0.3em;
+      text-align: left;
+      font-size: xx-large;
       margin-bottom: var(--mb-2);
       color: #fafafa;
     }
@@ -537,32 +500,15 @@ img {
     }
   }
   .skills {
-    height: 110vh;
-    margin: 1em;
     &__container {
-      z-index: 10;
       grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      text-align: initial;
     }
-    &__subtitle,
-    &__text {
-      color: #fafafa;
-    }
-    &__data {
-      box-shadow: 0px 4px 25px rgba(219, 212, 212, 0.15);
-    }
-    &__icon {
-      color: var(--final-color);
-    }
-    &__names {
-      display: flex;
-      color: var(--third-color);
-      align-items: center;
+    &__img {
+      display: block;
     }
   }
   .work {
-    height: 100vh;
+    // height: 100vh;
     &__container {
       grid-template-columns: repeat(2, 2fr);
       grid-template-rows: repeat(2, 1fr);
@@ -570,184 +516,191 @@ img {
     }
   }
   .contact {
-    height: 90vh;
-    margin: 1.4em;
-    &__form {
-      width: 560px;
-    }
     &__container {
-      justify-items: center;
-    }
-    &__input {
-      background-color: #ffffffb4;
-      border: 1.5px solid var(--final-color);
-    }
-    &__button {
-      display: block;
-      border: none;
-      outline: none;
-      font-size: var(--normal-font-size);
-      cursor: pointer;
-      margin: auto;
-      transition: 0.3s ease background-color;
-    }
-  }
-
-  .footer {
-    background-color: rgb(26, 26, 26);
-    box-shadow: 0 1px 4px rgba(135, 149, 163, 0.342);
-    color: #fff;
-    text-align: center;
-    font-weight: var(--big-font-size);
-    padding: 1rem 0;
-
-    &__title {
-      font-size: 1.5rem;
-      margin-bottom: var(--mb-4);
-    }
-    &__social {
-      margin-bottom: var(--mb-4);
-    }
-    &__icon {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 0 var(--mb-2);
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
     }
   }
 }
 @media screen and(min-width: 1024px) {
   .nav {
+    height: 4rem;
     &__list {
+      margin-top: 1em;
       display: flex;
-      font-weight: 300;
-      margin-top: 1rem;
+      column-gap: 1.5rem;
     }
-
+    &__logo {
+      font-size: x-large;
+    }
     &__toggle {
       display: none;
+    }
+  }
+  .home {
+    &__title {
+      font-size: 52px;
+    }
+  }
+  .about {
+    &__img {
+      width: 70%;
+    }
+  }
+  .button {
+    padding: 1rem 3rem;
+    font-size: x-large;
+  }
+  .contact {
+    &__container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 60%;
     }
   }
 }
 
 @media screen and(min-width: 1366px) {
-  .section-title {
-    color: #ffff00;
-    &::after {
-      width: 110px;
-    }
-  }
-  .l-header {
-    background-color: rgb(26, 26, 26);
-    box-shadow: 0 1px 4px rgba(135, 149, 163, 0.342);
-  }
-  .nav {
-    &__logo {
-      margin-left: 1.4rem;
-      font-size: var(--h2-font-size);
-    }
-  }
   .home {
-    height: 120vh;
+    // margin: auto;
+    height: 140vh;
     &__title {
-      margin-top: 3em;
-      font-size: 4rem;
-      z-index: 10;
-      color: #fafafa;
+      font-size: 42px;
     }
     &__social {
-      margin-top: 1.8em;
-      margin-left: 1.8em;
-
+      display: flex;
+      margin: auto;
+      column-gap: 95px;
       &-icon {
-        color: var(--third-color);
+        font-size: 3rem;
       }
-    }
-    &__img {
-      position: fixed;
-      z-index: -10;
-      top: -5em;
-      left: -1em;
-      width: 2000px;
-    }
-  }
-  .button {
-    margin-left: 2em;
-  }
-
-  .about {
-    height: 150vh;
-    margin: 1em;
-    &__container {
-      text-align: inherit;
-    }
-    &__subtitle {
-      color: #fafafa;
-    }
-    &__text {
-      font-size: larger;
-      color: #fafafa;
-    }
-    &__img {
-      width: 400px;
     }
   }
   .skills {
-    height: 160vh;
-    margin: 1em;
-    &__container {
-      z-index: 10;
-      grid-template-columns: repeat(2, 1fr);
-      align-items: center;
-      text-align: initial;
-    }
+    margin: 0 2em;
     &__subtitle,
     &__text {
-      color: #fafafa;
+      text-align: left;
+      font-size: 2rem;
+    }
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
     }
     &__data {
-      box-shadow: 0px 4px 25px rgba(219, 212, 212, 0.15);
+      text-align: center;
+      font-size: 2rem;
+    }
+    &__bar {
+      height: 5rem;
     }
     &__icon {
-      color: var(--final-color);
+      font-size: 2rem;
     }
-    &__names {
-      display: flex;
-      color: var(--third-color);
-      align-items: center;
+    &__img {
+      margin: auto;
+      justify-content: center;
+      width: 70%;
+      display: block;
+    }
+  }
+  .about {
+    &__img {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and(min-width: 2560px) {
+  .section-title {
+    font-size: 4rem;
+    &::after {
+      width: 200px;
+      top: 7rem;
+    }
+  }
+  .nav {
+    height: 5rem;
+    &__logo {
+      margin-left: 3rem;
+      font-size: xx-large;
+    }
+    &__item {
+      margin-left: var(--mb-6);
+    }
+  }
+  .home {
+    height: 95vh;
+    &__title {
+      margin-left: 3rem;
+      font-size: 64px;
+    }
+    &__social {
+      &-icon {
+        font-size: 4rem;
+      }
+    }
+    .button {
+      padding: 1rem 4rem;
+      font-size: xx-large;
+      margin-left: 1.4em;
+    }
+  }
+  .about {
+    &__img {
+      width: 60%;
+    }
+    &__subtitle {
+      font-size: 56px;
+    }
+    &__text {
+      font-size: 48px;
+    }
+  }
+  .skills {
+    margin: 0 2em;
+    &__subtitle,
+    &__text {
+      text-align: left;
+      font-size: 3rem;
+    }
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__data {
+      text-align: center;
+      font-size: 2rem;
+    }
+    &__bar {
+      height: 10rem;
+    }
+    &__icon {
+      font-size: 4rem;
+    }
+    &__img {
+      margin: auto;
+      justify-content: center;
+      width: 70%;
+      display: block;
     }
   }
   .work {
-    margin: 1em;
-    height: 220vh;
+    &__container {
+      margin-left: 1em;
+      margin-right: 1em;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      column-gap: 1rem;
+      row-gap: 4rem;
+    }
   }
   .contact {
-    height: 120vh;
-    margin: 1.4em;
-    &__form {
-      width: 560px;
-    }
     &__container {
+      margin-left: 3em;
       justify-items: left;
-    }
-    &__input {
-      background-color: #ffffffb4;
-      border: 1.5px solid var(--final-color);
+      justify-content: left;
     }
     &__button {
-      display: block;
-      border: none;
-      outline: none;
-      font-size: var(--normal-font-size);
-      cursor: pointer;
-      margin-left: 0em;
-    }
-    #status {
-      width: 800%;
-      max-width: 400px;
-      text-align: center;
-      padding: 10px;
-      margin: 0 auto;
-      border-radius: 8px;
       margin-left: 0em;
     }
   }
